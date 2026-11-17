@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shortlist"
+version = "1.0.0"
+description = "AI resume screening and job recommendation engine"
+readme = "README.md"
+requires-python = ">=3.10"
+license = "MIT"
+authors = [
+    { name = "Mohammed Nifras", email = "mohammed.nifras.000555@gmail.com" }
+]
+keywords = ["resume-screening", "job-matching", "nlp", "tfidf", "flask", "recruitment"]
+dependencies = [
+    "flask>=3.0",
+    "pypdf>=4.0",
+    "scikit-learn>=1.3",
+]
+
+[project.optional-dependencies]
+dev = [
+    "reportlab>=4.0",
+]
+
+[tool.setuptools.packages.find]
+include = ["engine*"]
+
+[tool.setuptools]
+py-modules = ["app"]

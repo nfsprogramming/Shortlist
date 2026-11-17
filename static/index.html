@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shortlist – AI resume screening and job matching</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&family=Unbounded:wght@500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header class="top">
+  <span class="logo">Shortlist</span>
+  <a class="pill" href="#analyze">Try it</a>
+</header>
+
+<section class="hero">
+  <div class="hero-copy">
+    <h1>Know where your resume fits.</h1>
+    <p>Upload a PDF resume. Get a screening score against any job description and the best roles for your skills.</p>
+    <a class="btn" href="#analyze">Upload resume</a>
+  </div>
+  <div class="stage" aria-hidden="true">
+    <div class="card doc">
+      <i class="l w60"></i><i class="l w90"></i><i class="l w75"></i><i class="l w40"></i>
+      <span class="tag t1">Python</span><span class="tag t2">React</span><span class="tag t3">SQL</span>
+    </div>
+    <div class="card score"><b>92%</b><small>Shortlist</small></div>
+    <div class="card job"><small>Best match</small><b>ML Engineer</b></div>
+  </div>
+</section>
+
+<main id="analyze">
+  <section class="panel">
+    <h2>Add your resume</h2>
+    <div class="tabs" role="tablist">
+      <button class="tab on" data-tab="file" role="tab">Upload file</button>
+      <button class="tab" data-tab="text" role="tab">Paste text</button>
+    </div>
+    <label id="drop" class="drop" tabindex="0">
+      <input id="file" type="file" accept=".pdf,.txt,.md" hidden>
+      <strong id="dropTitle">Drop a PDF here or click to browse</strong>
+      <span id="dropSub">PDF, TXT or MD, up to 5 MB</span>
+    </label>
+    <textarea id="text" class="ta" hidden placeholder="Paste your resume text here"></textarea>
+
+    <h2 class="gap">Job description <span class="opt">optional</span></h2>
+    <textarea id="jd" class="ta short" placeholder="Paste a job description to get a screening score"></textarea>
+
+    <div class="actions">
+      <button id="go" class="btn">Analyze resume</button>
+      <button id="sample" class="btn ghost" type="button">Use sample</button>
+    </div>
+    <p id="err" class="err" role="alert" hidden></p>
+  </section>
+
+  <section id="results" class="results" hidden></section>
+</main>
+
+<footer>Runs on your own server. Resumes are analysed in memory and never stored.</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>
